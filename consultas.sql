@@ -5,10 +5,10 @@
 /*Avion que usa cada piloto*/
 
 
-/*SELECT id_avion, id_piloto
+SELECT id_avion, id_piloto
 FROM piloto, avion, usa_avion
 WHERE piloto.id_piloto= usa_avion.idpiloto AND
-      avion.id_avion=usa_avion.idavion;*/
+      avion.id_avion=usa_avion.idavion;
 
 
 
@@ -17,12 +17,12 @@ tipo cadena de caracteres, usando % y CONCAT.*/
 
 /*Ubicacion de los aviones modelo boeing*/
 
-/*SELECT avion.modelo, CONCAT(ubicacion.latitud, " ", ubicacion.longitud, " ",ubicacion.altitud) AS Coordenadas
+SELECT avion.modelo, CONCAT(ubicacion.latitud, " ", ubicacion.longitud, " ",ubicacion.altitud) AS Coordenadas
 FROM avion, ubicacion_vuelo, vuelo, ubicacion
 WHERE avion.id_avion=vuelo.idavionv AND
       vuelo.id_vuelo=ubicacion_vuelo.idvuelo AND
       ubicacion_vuelo.idubicacion=ubicacion.id_ubicacion AND
-      modelo LIKE '%boeing%';*/
+      modelo LIKE '%boeing%';
 
 
 
@@ -32,12 +32,12 @@ alguna función a agregación sobre atributo: COUNT, AVG, MAX, etc.*/
 
 /*numero de vuelos que salen de Madrid y tienen como avion un modelo Boeing*/
 
-/*SELECT COUNT(vuelo.id_vuelo)
+SELECT COUNT(vuelo.id_vuelo)
 FROM vuelo, avion
 WHERE avion.id_avion=vuelo.idavionv AND
       vuelo.salida_terminal=1 
 GROUP BY avion.modelo
-HAVING avion.modelo='boeing';*/
+HAVING avion.modelo='boeing';
 
 
 
@@ -45,9 +45,9 @@ HAVING avion.modelo='boeing';*/
 
 /*Cambiamos el modelo de un avion en concreto a General Dynamics*/
  
-/*UPDATE avion 
+UPDATE avion 
 SET id_avion = 2001, modelo= 'General Dynamics' 
-WHERE id_avion = '2001'; */
+WHERE id_avion = '2001'; 
  
  
  
@@ -56,7 +56,7 @@ WHERE id_avion = '2001'; */
  
 /*CONSULTA 5* Una consulta DELETE.*/ 
  
-/*DELETE FROM avion WHERE modelo='boeing';  */
+DELETE FROM avion WHERE modelo='boeing';  
 
 /*CONSULTAS P3----------------------------------------------------------------------------------------------*/
 
